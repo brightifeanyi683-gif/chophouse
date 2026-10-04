@@ -3,7 +3,8 @@ import useReveal from "../hooks/useReveal";
 
 import "./ReservationForm.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 const WHATSAPP_NUMBER = "2349048889338";
 
 function ReservationForm() {
