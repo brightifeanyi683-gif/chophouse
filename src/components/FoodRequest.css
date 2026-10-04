@@ -1,0 +1,425 @@
+/* ========================================
+   FOOD REQUEST
+======================================== */
+
+.food-request {
+  padding: 125px 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.food-request-container {
+  width: min(calc(100% - 48px), var(--container));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: clamp(55px, 8vw, 110px);
+  align-items: start;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.food-request-intro {
+  position: sticky;
+  top: 120px;
+}
+
+.food-request-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: var(--orange);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.food-request-eyebrow::before {
+  content: "";
+
+  width: 28px;
+  height: 1px;
+
+  background: var(--orange);
+}
+
+.food-request-intro h2 {
+  margin: 0;
+
+  color: var(--green-950);
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.food-request-intro h2 em {
+  display: block;
+
+  color: var(--orange);
+
+  font-style: italic;
+  font-weight: 400;
+}
+
+.food-request-intro > p {
+  max-width: 430px;
+
+  margin: 28px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+
+
+/* ========================================
+   NOTE
+======================================== */
+
+.food-request-note {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-top: 45px;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--border);
+}
+
+.food-request-note span {
+  color: var(--green-900);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.food-request-note small {
+  color: var(--text-muted);
+
+  font-size: 0.68rem;
+}
+
+
+/* ========================================
+   FORM WRAPPER
+======================================== */
+
+.food-request-form-wrap {
+  padding: 35px;
+
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.request-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 18px;
+}
+
+.request-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.request-field-full {
+  grid-column: 1 / -1;
+}
+
+.request-field label {
+  color: var(--green-900);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.request-field input,
+.request-field textarea {
+  width: 100%;
+
+  padding: 14px 15px;
+
+  border: 1px solid rgba(28, 28, 24, 0.15);
+
+  outline: none;
+
+  background: var(--white);
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.82rem;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.request-field textarea {
+  min-height: 115px;
+
+  resize: vertical;
+}
+
+.request-field input::placeholder,
+.request-field textarea::placeholder {
+  color: #99958c;
+}
+
+.request-field input:focus,
+.request-field textarea:focus {
+  border-color: var(--green-800);
+
+  box-shadow:
+    0 0 0 3px rgba(23, 73, 54, 0.08);
+}
+
+
+/* ========================================
+   SERVICE OPTIONS
+======================================== */
+
+.service-options-row {
+  display: flex;
+  gap: 8px;
+}
+
+.service-option {
+  position: relative;
+
+  flex: 1;
+
+  cursor: pointer;
+}
+
+.service-option input {
+  position: absolute;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.service-option span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 0 12px;
+
+  border: 1px solid rgba(28, 28, 24, 0.15);
+
+  background: var(--white);
+
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  text-align: center;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.service-option:hover span {
+  border-color: var(--green-800);
+}
+
+.service-option.active span {
+  background: var(--green-900);
+  border-color: var(--green-900);
+  color: var(--white);
+}
+
+
+/* ========================================
+   ACTIONS
+======================================== */
+
+.request-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.request-whatsapp,
+.request-email {
+  min-height: 52px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: none;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.request-whatsapp {
+  background: var(--green-900);
+  color: var(--white);
+}
+
+.request-whatsapp:hover {
+  background: var(--green-800);
+  transform: translateY(-2px);
+}
+
+.request-email {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.request-email:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+}
+
+.request-whatsapp span,
+.request-email span {
+  font-size: 1rem;
+}
+
+
+/* ========================================
+   SUCCESS
+======================================== */
+
+.request-success {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-top: 18px;
+  padding: 15px 17px;
+
+  border-left: 3px solid var(--gold);
+
+  background: rgba(212, 169, 77, 0.1);
+}
+
+.request-success strong {
+  color: var(--green-900);
+
+  font-size: 0.75rem;
+}
+
+.request-success span {
+  color: var(--text-muted);
+
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+  .food-request {
+    padding: 100px 0;
+  }
+
+  .food-request-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .food-request-intro {
+    position: static;
+  }
+
+  .food-request-intro > p {
+    max-width: 650px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .food-request {
+    padding: 80px 0 70px;
+  }
+
+  .food-request-container {
+    width: min(calc(100% - 32px), var(--container));
+    gap: 40px;
+  }
+
+  .food-request-intro h2 {
+    font-size: clamp(2.5rem, 12vw, 3.4rem);
+  }
+
+  .food-request-intro > p {
+    font-size: 0.86rem;
+  }
+
+  .food-request-form-wrap {
+    padding: 20px;
+  }
+
+  .request-form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .request-field-full {
+    grid-column: auto;
+  }
+
+  .service-options-row {
+    flex-direction: column;
+  }
+
+  .request-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .request-whatsapp,
+  .request-email {
+    width: 100%;
+  }
+}

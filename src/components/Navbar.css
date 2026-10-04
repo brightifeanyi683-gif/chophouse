@@ -1,0 +1,461 @@
+/* =========================================================
+   CHOPHOUSE NAVBAR
+========================================================= */
+
+.site-navbar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  padding: 22px 0;
+}
+
+.navbar-container {
+  width: min(
+    var(--container),
+    calc(100% - 48px)
+  );
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--white);
+
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--gold);
+
+  color: var(--gold);
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.3rem;
+
+  font-style: italic;
+}
+
+.brand-text {
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 32px;
+
+  margin-left: auto;
+}
+
+.nav-link {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 0.84rem;
+
+  text-decoration: none;
+
+  transition: color 200ms ease;
+}
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--orange);
+
+  transition: width 200ms ease;
+}
+
+.nav-link:hover {
+  color: var(--white);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-left: 10px;
+}
+
+.cart-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--white);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+
+.cart-count {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  color: var(--brown);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.reserve-link {
+  min-height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 18px;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--orange);
+
+  color: var(--white);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.reserve-link:hover {
+  background: var(--orange-dark);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+
+  display: none;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: rgba(0, 0, 0, 0.12);
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 1px;
+
+  background: var(--white);
+
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
+}
+
+.menu-toggle.is-open span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-navigation {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .navbar-container {
+    width: calc(100% - 40px);
+  }
+
+  .desktop-nav {
+    gap: 20px;
+  }
+
+  .navbar-actions {
+    gap: 12px;
+  }
+
+  .reserve-link {
+    padding: 0 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .site-navbar {
+    padding: 16px 0;
+  }
+
+  .navbar-container {
+    width: calc(100% - 32px);
+
+    justify-content: space-between;
+  }
+
+  .desktop-nav,
+  .navbar-actions {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+
+  /* Mobile panel */
+
+  .mobile-navigation {
+    position: absolute;
+
+    top: calc(100% + 1px);
+
+    left: 16px;
+    right: 16px;
+
+    display: block;
+
+    padding: 8px;
+
+    background: rgba(11, 33, 24, 0.98);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity 200ms ease,
+      transform 200ms ease,
+      visibility 200ms ease;
+
+    backdrop-filter: blur(18px);
+  }
+
+  .mobile-navigation.is-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+
+  .mobile-navigation nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-navigation nav a {
+    padding: 15px 14px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 0.88rem;
+
+    text-decoration: none;
+  }
+
+
+  /* Mobile actions */
+
+  .mobile-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    padding: 12px 5px 5px;
+  }
+
+  .mobile-cart,
+  .mobile-reserve {
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    text-decoration: none;
+  }
+
+  .mobile-cart {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    color: var(--white);
+  }
+
+  .mobile-cart span {
+    width: 19px;
+    height: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 6px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--brown);
+
+    font-size: 0.6rem;
+  }
+
+  .mobile-reserve {
+    background: var(--orange);
+
+    color: var(--white);
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .brand-text {
+    font-size: 0.88rem;
+
+    letter-spacing: 0.13em;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-actions {
+    grid-template-columns: 1fr;
+  }
+}

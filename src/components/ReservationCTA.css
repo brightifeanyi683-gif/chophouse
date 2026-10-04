@@ -1,0 +1,368 @@
+/* ========================================
+   RESERVATION CTA
+======================================== */
+
+.reservation-cta {
+  position: relative;
+  min-height: 700px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  color: var(--white);
+}
+
+.reservation-cta-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.reservation-cta-background img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.06);
+
+  transition: transform 1.4s ease;
+}
+
+.reservation-cta.is-visible
+.reservation-cta-background img {
+  transform: scale(1);
+}
+
+.reservation-cta-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 24, 17, 0.94) 0%,
+      rgba(7, 24, 17, 0.78) 45%,
+      rgba(7, 24, 17, 0.42) 100%
+    );
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.reservation-cta-container {
+  position: relative;
+  z-index: 1;
+
+  width: min(calc(100% - 48px), var(--container));
+  margin: 0 auto;
+
+  padding: 110px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 700px;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.reservation-content {
+  max-width: 700px;
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease 0.1s,
+    transform 0.8s ease 0.1s;
+}
+
+.reservation-cta.is-visible .reservation-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reservation-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 20px;
+
+  color: var(--gold);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.reservation-eyebrow::before {
+  content: "";
+
+  width: 30px;
+  height: 1px;
+
+  background: var(--gold);
+}
+
+.reservation-content h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+
+  color: var(--white);
+}
+
+.reservation-content h2 em {
+  display: block;
+
+  color: var(--gold);
+
+  font-style: italic;
+  font-weight: 400;
+}
+
+.reservation-content p {
+  max-width: 570px;
+
+  margin: 30px 0 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+
+/* ========================================
+   ACTIONS
+======================================== */
+
+.reservation-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 35px;
+}
+
+.reservation-primary,
+.reservation-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 52px;
+
+  padding: 0 24px;
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    gap 0.25s ease,
+    transform 0.25s ease;
+}
+
+.reservation-primary {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.reservation-primary:hover {
+  background: var(--orange-dark);
+  gap: 17px;
+  transform: translateY(-2px);
+}
+
+.reservation-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  color: var(--white);
+}
+
+.reservation-secondary:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ========================================
+   DETAILS
+======================================== */
+
+.reservation-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  max-width: 700px;
+
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+  opacity: 0;
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.8s ease 0.35s,
+    transform 0.8s ease 0.35s;
+}
+
+.reservation-cta.is-visible .reservation-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reservation-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding-right: 35px;
+}
+
+.reservation-details > div + div {
+  padding-left: 35px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.reservation-details span {
+  margin-bottom: 5px;
+
+  color: var(--gold);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.reservation-details strong {
+  color: var(--white);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.reservation-details small {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 0.68rem;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 800px) {
+  .reservation-cta {
+    min-height: 650px;
+  }
+
+  .reservation-cta-container {
+    min-height: 650px;
+    padding: 90px 0;
+  }
+
+  .reservation-content h2 {
+    font-size: clamp(3rem, 9vw, 5rem);
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .reservation-cta {
+    min-height: auto;
+  }
+
+  .reservation-cta-container {
+    width: min(calc(100% - 32px), var(--container));
+
+    min-height: auto;
+
+    padding: 80px 0;
+  }
+
+  .reservation-cta-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 24, 17, 0.94),
+        rgba(7, 24, 17, 0.82)
+      );
+  }
+
+  .reservation-content h2 {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+
+  .reservation-content p {
+    font-size: 0.88rem;
+  }
+
+  .reservation-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reservation-primary,
+  .reservation-secondary {
+    width: 100%;
+  }
+
+  .reservation-details {
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    margin-top: 75px;
+  }
+
+  .reservation-details > div,
+  .reservation-details > div + div {
+    padding: 0 0 25px;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .reservation-details > div:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .reservation-cta-background img,
+  .reservation-content,
+  .reservation-details {
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+}

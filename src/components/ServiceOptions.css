@@ -1,0 +1,408 @@
+/* ========================================
+   SERVICE OPTIONS
+======================================== */
+
+.service-options {
+  position: relative;
+  overflow: hidden;
+
+  padding: 125px 0;
+
+  background: var(--green-950);
+  color: var(--white);
+}
+
+.service-options::before {
+  content: "";
+
+  position: absolute;
+  top: -220px;
+  right: -160px;
+
+  width: 500px;
+  height: 500px;
+
+  border: 1px solid rgba(212, 169, 77, 0.12);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.service-options::after {
+  content: "";
+
+  position: absolute;
+  bottom: -300px;
+  left: -180px;
+
+  width: 500px;
+  height: 500px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.service-container {
+  position: relative;
+  z-index: 1;
+
+  width: min(calc(100% - 48px), var(--container));
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.service-header {
+  display: grid;
+  grid-template-columns: 1.1fr 0.75fr;
+
+  gap: 70px;
+  align-items: end;
+
+  margin-bottom: 60px;
+}
+
+.service-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: var(--gold);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.service-eyebrow::before {
+  content: "";
+
+  width: 28px;
+  height: 1px;
+
+  background: var(--gold);
+}
+
+.service-header h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+
+  color: var(--white);
+}
+
+.service-header h2 em {
+  display: block;
+
+  color: var(--gold);
+
+  font-style: italic;
+  font-weight: 400;
+}
+
+.service-header > p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+
+/* ========================================
+   SERVICE GRID
+======================================== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+
+/* ========================================
+   SERVICE CARD
+======================================== */
+
+.service-card {
+  position: relative;
+
+  min-height: 360px;
+
+  padding: 30px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.7s ease var(--service-delay),
+    transform 0.7s ease var(--service-delay),
+    background 0.35s ease;
+}
+
+.service-card:last-child {
+  border-right: none;
+}
+
+.service-options.is-visible .service-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+
+/* ========================================
+   CARD TOP
+======================================== */
+
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 90px;
+}
+
+.service-number {
+  color: var(--gold);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.service-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 1rem;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-card:hover .service-arrow {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+
+  transform: rotate(45deg);
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.service-card-content h3 {
+  margin: 0 0 15px;
+
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 500;
+
+  color: var(--white);
+}
+
+.service-card-content p {
+  max-width: 320px;
+
+  margin: 0 0 25px;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 0.83rem;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   LINK
+======================================== */
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--gold);
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.service-link span {
+  font-size: 1rem;
+}
+
+.service-link:hover {
+  color: var(--white);
+  gap: 15px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .service-options {
+    padding: 100px 0;
+  }
+
+  .service-header {
+    grid-template-columns: 1fr 0.7fr;
+
+    gap: 45px;
+  }
+
+  .service-card {
+    min-height: 340px;
+
+    padding: 25px;
+  }
+
+  .service-card-top {
+    margin-bottom: 70px;
+  }
+}
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 720px) {
+  .service-header {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .service-header > p {
+    max-width: 600px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
+
+    padding: 30px 0;
+
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .service-card:last-child {
+    border-bottom: none;
+  }
+
+  .service-card-top {
+    margin-bottom: 45px;
+  }
+
+  .service-card-content p {
+    max-width: 600px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .service-options {
+    padding: 80px 0 70px;
+  }
+
+  .service-container {
+    width: min(calc(100% - 32px), var(--container));
+  }
+
+  .service-header {
+    margin-bottom: 45px;
+  }
+
+  .service-header h2 {
+    font-size: clamp(2.5rem, 12vw, 3.4rem);
+  }
+
+  .service-header > p {
+    font-size: 0.88rem;
+  }
+
+  .service-card {
+    padding: 28px 0;
+  }
+
+  .service-card-top {
+    margin-bottom: 35px;
+  }
+
+  .service-card-content h3 {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .service-card:hover .service-arrow {
+    transform: none;
+  }
+}
