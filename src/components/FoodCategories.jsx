@@ -90,17 +90,15 @@ function FoodCategories() {
 
           {categories.map((category, index) => (
 
-            <Link
-              to={`/menu?category=${category.name}`}
+           <a
+              href="#menu"
               className="category-card"
               key={category.id}
               style={{
                 "--delay": `${index * 80}ms`,
               }}
             >
-
               <div className="category-image">
-
                 <img
                   src={category.image}
                   alt={category.name}
@@ -108,29 +106,20 @@ function FoodCategories() {
                 />
 
                 <div className="category-image-overlay" />
-
               </div>
 
-
               <div className="category-content">
-
                 <div>
-                  <h3>
-                    {category.name}
-                  </h3>
+                  <h3>{category.name}</h3>
 
-                  <p>
-                    {category.description}
-                  </p>
+                  <p>{category.description}</p>
                 </div>
 
                 <span className="category-arrow">
                   →
                 </span>
-
               </div>
-
-            </Link>
+       </a>
 
           ))}
 
