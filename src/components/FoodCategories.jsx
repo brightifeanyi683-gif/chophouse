@@ -8,7 +8,7 @@ const categories = [
     name: "Rice",
     description: "Jollof, fried rice & more",
     image:
-      "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=85",
+      "https://i.pinimg.com/1200x/d7/ff/8c/d7ff8c0a61814346f91a8268044c6589.jpg",
   },
 
   {
@@ -16,7 +16,7 @@ const categories = [
     name: "Soups",
     description: "Rich Nigerian soups",
     image:
-      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85",
+      "https://i.pinimg.com/736x/26/0c/19/260c19d9918d7fd4959e3ad06e61d94f.jpg",
   },
 
   {
@@ -24,7 +24,7 @@ const categories = [
     name: "Swallow",
     description: "Eba, pounded yam & more",
     image:
-      "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85",
+      "https://i.pinimg.com/736x/c4/4f/a9/c44fa94a307ba1a54715fe56ca873bd8.jpg",
   },
 
   {
@@ -32,7 +32,7 @@ const categories = [
     name: "Grills",
     description: "Suya, chicken & fish",
     image:
-      "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=85",
+      "https://i.pinimg.com/1200x/16/23/70/162370cdceed0d0fa39dee4dc673fc97.jpg",
   },
 
   {
@@ -40,7 +40,7 @@ const categories = [
     name: "Breakfast",
     description: "Start your day right",
     image:
-      "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=85",
+      "https://i.pinimg.com/736x/5b/2c/a8/5b2ca89ce2e5eeaf882e72b21cbc51c1.jpg",
   },
 
   {
@@ -48,7 +48,7 @@ const categories = [
     name: "Drinks",
     description: "Zobo, Chapman & more",
     image:
-      "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85",
+      "https://i.pinimg.com/736x/a6/83/47/a68347315e1e13399234c1957982237f.jpg",
   },
 ];
 
