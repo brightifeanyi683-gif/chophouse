@@ -73,13 +73,13 @@ function FoodCategories() {
             </h2>
           </div>
 
-          <Link
-            to="/menu"
+          <a
+            href="#menu"
             className="categories-link"
           >
             View full menu
             <span>→</span>
-          </Link>
+          </a>
 
         </div>
 
