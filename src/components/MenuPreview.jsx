@@ -35,9 +35,11 @@ function MenuPreview() {
         setLoading(true);
         setError("");
 
-        const response = await fetch(
-          "http://localhost:5000/api/menu"
-        );
+        const API_URL =
+          import.meta.env.VITE_API_URL ||
+          "http://localhost:5000/api";
+
+        const response = await fetch(`${API_URL}/menu`);
 
         if (!response.ok) {
           throw new Error("Failed to fetch menu");
@@ -86,7 +88,6 @@ function MenuPreview() {
 
         {/* Header */}
         <div className="menu-preview-header">
-
           <div>
             <span className="menu-preview-eyebrow">
               OUR MENU
@@ -103,7 +104,6 @@ function MenuPreview() {
             comforting African dishes, every plate
             is prepared with care.
           </p>
-
         </div>
 
         {/* Categories */}
@@ -184,7 +184,6 @@ function MenuPreview() {
                   </div>
 
                   <div className="food-card-content">
-
                     <div className="food-card-top">
                       <h3>{food.name}</h3>
 
@@ -213,7 +212,6 @@ function MenuPreview() {
                         +
                       </span>
                     </button>
-
                   </div>
                 </article>
               ))}
